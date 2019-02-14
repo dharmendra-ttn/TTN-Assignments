@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 5</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		.target{
+			font-size: 15px;
+		}
+	</style>>
+</head>
+<body id="main">
+	<h1>Change the font size of ".target" which has parent element with id name "#main"</h1><br/s>
+	<p class="target">Hello World</p>
+	<button id="toggleButton">Click Me!</button>
+
+	<script>
+		$(document).ready(function(){
+			$("#toggleButton").click(function(){
+				$("#main > .target").css("font-size","100px")
+			});
+			
+		});
+	</script>
+</body>
+</html>

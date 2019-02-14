@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 2</title>
+	<style type="text/css">
+		.load{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Select a ID name "#test" and add class "load" when DOM is loaded</h1>
+	<p id="test">Test Data</p>
+
+	<script>
+		$(document).ready(function(){
+			$("#test").addClass("load");
+		});
+	</script>
+</body>
+</html>

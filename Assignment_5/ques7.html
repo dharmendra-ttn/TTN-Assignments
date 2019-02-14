@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 7</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+<body>
+	<h1>Bind a click function to an "click" element and append next "click" next to it.</h1>
+	<input id="btn-demo" type="button" value="click me"><br><br>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	$("#btn-demo").click(function(){
+		$("body").append("<input type='button' id='generator-button' value='New Button'>");
+	});	
+	});
+</script>
+</body>
+</html>

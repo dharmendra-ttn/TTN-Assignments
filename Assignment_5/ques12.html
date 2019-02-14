@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 12</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+<body>
+	<h1>We have bind a click funtion to parent div but we want stop it from performing when user clicks on its child li</h1>
+	<div id="parent">
+		<h1>Parent</h1>
+		<ul id="list-child">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+	</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#parent").click(function(){
+			console.log("Clicked on parent");
+		});
+		$("#list-child").click(function(e){
+			console.log("clicked on child");
+			e.stopPropagation();
+			});
+	});
+</script>
+</body>
+</html>

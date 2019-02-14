@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 6</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		.target{
+			font-size: 15px;
+		}
+	</style>
+</head>
+<body id="main">
+	<h1>After page load change the HTML of div element with "p" element</h1><br/>
+	<div><h1>demo text</h1></div>
+		<script>
+		$(document).ready(function(){
+			var tmp = $("<p>Added Content</p>", {
+			id: "abc",class: "target"});
+			$("div").html(tmp);
+		});
+	</script>
+</body>
+</html>

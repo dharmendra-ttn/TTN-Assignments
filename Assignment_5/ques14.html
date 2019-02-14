@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 14</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<style>
+	table,td {
+  	border: 1px solid black;
+  	border-collapse: collapse;	
+	}
+	td{
+ 	padding: 5px;
+  	text-align: center;
+	}
+</style>
+</head>
+<body>
+	<h1>Change color of every cell which has numberl larger than 10.</h1>
+	
+<table id="#table" style="width:100%">
+  <tr>
+    <td>2</td>
+    <td>11</td>
+    <td>3</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>5</td>
+    <td>3</td>
+    <td>6</td>
+  </tr>
+    <tr>
+    <td>21</td>
+    <td>9</td>
+    <td>8</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>11</td>
+  </tr>
+    <tr>
+    <td>22</td>
+    <td>10</td>
+    <td>34</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>5</td>
+    <td>33</td>
+    <td>6</td>
+  </tr>
+    <tr>
+    <td>12</td>
+    <td>1</td>
+    <td>0</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>5</td>
+    <td>19</td>
+    <td>6</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("td").each(function(){
+				if($(this).text() > 10){
+					$(this).css("background","red");
+				}
+			});
+		});
+</script>
+</body>
+</html>

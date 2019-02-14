@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 11</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+<body>
+	<h1>On clicking on "google" tag. It is taking us to google home page. Stop it from happening</h1>
+	<h2><a id="google-click" href="https://www.google.com">Google</a></h2>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#google-click").click(function(e){
+			e.preventDefault();
+		});
+	});
+</script>
+</body>
+</html>

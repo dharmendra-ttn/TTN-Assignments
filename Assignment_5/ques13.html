@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 13</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+<body>
+	<div>
+	<h1>Get the max height of elements using jquery each method</h1>
+		<ul id="list-child">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+
+	</div>
+	<div>
+		<h1>Hello World</h1>
+	</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var count=1;
+		$("div").each(function(){
+			var temp = $(this).height();
+			alert("height of div "+ count + " is " + temp);
+			count++;
+		});
+	});
+</script>
+</body>
+</html>

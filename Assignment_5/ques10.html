@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 10</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+<body>
+	<h1>Create a dropdown menu using hover method in jquery</h1>
+
+	<select id="list-drop">
+  		<option value="volvo">Volvo</option>
+  		<option value="saab">Saab</option>
+  		<option value="mercedes">Mercedes</option>
+  		<option value="audi">Audi</option>
+	</select>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+                    $("#list-drop").on("mouseover",function(){
+                        $(this)[0].size=$(this).find("option").length;
+                    });
+                    $("#list-drop").on("click",function(){
+                        $(this)[0].size=0;
+                    });
+                });
+	</script>
+</body>
+</html>

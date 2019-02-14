@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ques 3</title>
+	<style type="text/css">
+		.load{
+			background: red;
+		}
+		.test-new{
+
+		}
+		.test1-new{
+
+		}
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Change the color of element which class name end with "-new"</h1>
+	<p class="test-new">Test Data</p>
+	<p class="load">Test Data</p>
+	<p class="test1-new">Test Data</p>
+	<button id="toggleButton">Click Me!</button>
+
+	<script>
+		$(document).ready(function(){
+			$("#toggleButton").click(function(){
+				$('[class$="-new"]').css("color","blue");
+			});
+		});
+	</script>
+</body>
+</html>
