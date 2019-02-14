@@ -3,6 +3,8 @@
 var list_employees=[
 ];
 
+var group_age =[];
+
 while(true){
 
 	emp_name = prompt("Enter Name: ");
@@ -29,38 +31,23 @@ for(i=0; i<list_employees.length;i++){
 }
 
 document.write("<b>group employee on the basis of their age : </b><br>");
-
-
-document.write("<b>Age Group (less than or equal to 20) : </b><br>");
+var list ={};
 for(i=0; i<list_employees.length;i++){
-	if(list_employees[i].Age <= 20){
-		document.write("Name : " + list_employees[i].Name + "<br>");
-	}
+        if(!list[list_employees[i].Age]){
+            list[list_employees[i].Age] = [list_employees[i]];
+        }
+        else{
+            list[list_employees[i].Age].push(list_employees[i]);
+        }
+    }
+ 	for(var key in list){
+ 		document.write("Age : "+ key);
+ 	for(i=0;i<list[key].length;i++){
+ 		document.write(" Name : "+ list[key][i].Name);
+ 		}
+ 		document.write("<br>");
 }
-document.write("<br>");
-document.write("<b>Age Group (21 - 40) : </b><br>");
-for(i=0; i<list_employees.length;i++){
-	if((list_employees[i].Age > 20) && (list_employees[i].Age <=40)){
-		document.write("Name : " + list_employees[i].Name + "<br>");
 
-	}
-}
-document.write("<br>");
-document.write("<b>Age Group (41 - 60) : </b><br>");
-for(i=0; i<list_employees.length;i++){
-	if((list_employees[i].Age > 40) && (list_employees[i].Age <=60)){
-		document.write("Name : " + list_employees[i].Name + "<br>");
-
-	}
-}
-document.write("<br>");
-document.write("<b>Age Group (others) : </b><br>");
-for(i=0; i<list_employees.length;i++){
-	if(list_employees[i].Age > 60){
-		document.write("Name : " + list_employees[i].Name + "<br>");
-
-	}
-}
 document.write("<br>");
 document.write("<b>fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary</b><br>");
 for(i=0; i<list_employees.length;i++){
@@ -71,8 +58,4 @@ for(i=0; i<list_employees.length;i++){
 		document.write("Updated Salary: " + list_employees[i].Salary+ "<br>");
 	}
 }
-
-
-
-
 }());
