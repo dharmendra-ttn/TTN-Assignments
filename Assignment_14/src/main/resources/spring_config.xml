@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean
+            class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="com.springbootcamp"/>
+    <bean id="database" class="com.springbootcamp.Database">
+        <property name="name" value="Dharmendra"/>
+        <property name="port" value="80"/>
+    </bean>
+    <bean id="tea" class="com.springbootcamp.Tea" primary="true"/>
+    <bean id="expressTea" class="com.springbootcamp.ExpressTea"/>
+    <bean name="teaRestaurent" scope="prototype" class="com.springbootcamp.Restaurent">
+        <property name="hotDrink" ref="tea"/>
+    </bean>
+    <bean name="expressTeaRestaurent" class="com.springbootcamp.Restaurent">
+        <property name="hotDrink" ref="expressTea"/>
+    </bean>
+
+    <bean name="expressTeaRestaurentInner" class="com.springbootcamp.Restaurent">
+        <property name="hotDrink">
+            <bean class="com.springbootcamp.ExpressTea"/>
+        </property>
+    </bean>
+
+    <bean name="complexBean" class="com.springbootcamp.Complex">
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="set">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>2</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2" value="value2"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean name="teaAutowiredByName" class="com.springbootcamp.Restaurent" autowire="byName"/>
+    <bean id="hotDrink" class="com.springbootcamp.Tea"/>
+
+    <bean name="teaAutowiredByCons" class="com.springbootcamp.Restaurent" autowire="constructor"/>
+
+    <!--<bean name="teaAutowiredByType" class="com.springbootcamp.Restaurent" autowire="byType"/>-->
+<!--there are more than type of hotdrink bean so byType is not possible-->
+
+    <bean name="hotDrinktoTea" class="com.springbootcamp.Restaurent"/>
+
+</beans>

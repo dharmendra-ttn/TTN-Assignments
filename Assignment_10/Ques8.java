@@ -5,16 +5,15 @@ interface Demo1{
     
 }
 interface Demo3{
-    default void print(){
+    default void printMe(){
         System.out.println("In Demo 3");
     }
     
 }
-interface Demo4 extends Demo1,Demo3{
-
-}
-public class Ques8 implements Demo4{
-    
+public class Ques8 implements Demo1,Demo3{
+    void printMe(){
+	Demo1.super.printMe();
+	}
     public static void main(String[] args) {
         Ques8 q = new Ques8();
         q.printMe();
