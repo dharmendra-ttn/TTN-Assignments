@@ -1,0 +1,38 @@
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    providedCompile 'javax.servlet:servlet-api:2.5', 'javax.servlet:jsp-api:2.0'
+    compile "org.springframework:spring-context:4.2.5.RELEASE"
+    compile 'org.springframework:spring-aspects:4.2.5.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.2.5.RELEASE'
+    compile 'org.hibernate:hibernate-validator:4.2.0.Final'
+    def tomcatVersion = '7.0.57'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+tomcatRun {
+    contextPath = ""
+    httpPort = 8080
+    File file = new File("src/main/webapp/WEB-INF/web.xml");
+    configFile = file
+}
+
