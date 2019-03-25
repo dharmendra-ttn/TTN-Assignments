@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.hibernate:hibernate-entitymanager:5.1.0.Final'
+    compile 'mysql:mysql-connector-java:5.1.13'
+    compile 'org.springframework.data:spring-data-jpa:1.11.4.RELEASE'
+    
+}
+
