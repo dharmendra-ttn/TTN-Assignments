@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Registered</title>
+    <style>
+        .odd{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div th:include="common-data::header"/>
+<div>
+<span th:if="${employeeList.get(employeeList.size()-1).getIsAdmin()}" > Hello Admin</span>
+<span th:unless="${employeeList.get(employeeList.size()-1).getIsAdmin()}" >Hello User</span>
+</div>
+<table border="1">
+    <thead>
+    <tr>
+        <td><b>UserName</b></td>
+        <td><b>Password</b></td>
+        <td><b>isAdmin</b></td>
+        <td><b>Message</b></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "i,rowNum : ${employeeList}" th:class="${rowNum.odd}?'odd'">
+        <td>
+            <span th:text="${i.getUserName()}"/>
+        </td>
+        <td><span th:text="${i.getPassWord()}"/></td>
+        <td><span th:text="${i.getIsAdmin()}"></span></td>
+        <td><span th:text="${i.getMsg().getValue()}"></span></td>
+    </tr>
+    </tbody>
+</table>
+<label>Roles</label>
+
+<div th:include="common-data::footer"/>
+</body>
+</html>

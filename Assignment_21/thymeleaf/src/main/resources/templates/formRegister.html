@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Thymeleaf</title>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body id="body">
+<th:block>
+    <form action="#" th:object="${employee}" th:action="@{'/register'}" method="post" id="login-form">
+        UserName: <input type="text" th:field="*{userName}"/><br/>
+        Password: <input type="password" th:field="*{passWord}"><br/>
+        IsAdmin: <input type="checkbox" th:field ="*{isAdmin}"><br/>
+        Roles:
+        <select  th:field="*{msg}">
+            <option th:value="None">Select</option>
+            <option th:each="role:${T(com.springthymeleaf.thymeleaf.enums.Roles).values()}" th:value="${role}" th:text="${role}"></option>
+        </select>
+        <br/>
+        <input type="submit" value="Register"/>
+    </form>
+</th:block>
+</body>
+</html>
